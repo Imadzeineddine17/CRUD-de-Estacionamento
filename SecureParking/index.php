@@ -4,7 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Estacionamento</title>
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+ 
+    <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
+ 
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css" />
     <style>
+        
         *{
             box-sizing: border-box;
             margin: 0;  
@@ -127,10 +133,10 @@
     <div>
     <a class= "button" href="inicio.php">↩</a>
     <h1>SecureParking🅿️ </h1>
-    <form action="testLogin.php" method="POST">
-        <input type = "text" name= "cpf" placeholder="CPF">
+    <form id="loginForm" method="POST">
+        <input type = "text" id="cpf" name= "cpf" placeholder="CPF">
         <br><br>
-        <input type = "password" name= "senha" placeholder="Senha">
+        <input type = "password" id="senha" name= "senha" placeholder="Senha">
         <br><br>
         <input class="inputSubmit" type="submit" name="submit" value="Entrar">
         <br><br>
@@ -140,9 +146,63 @@
     
 
 </body>
+<body>
+</body>
 </body>
 <body class="bg">
 
 </body>
 
+<script type="text/javascript">
+$('#loginForm').on('submit', function( event ) {
+   // prevent the default submit
+   event.preventDefault();
+   var form = $(this);
+   console.log(form)
+   var cpfform=$("#cpf").val()
+   console.log(cpfform)
+   var senhaform=$("#senha").val()
+   $.ajax({
+        url: "testlogin.php", 
+        type: "POST",
+        // use the forms data
+        data:{"cpf": cpfform, "senha": senhaform},
+
+        beforeSend: function() {
+            console.log( "Processing..." );
+        },
+        success: function( response ){
+            console.log(response)
+            // do sth with the response
+            if(response == "OK") {
+                window.location="http://localhost/cursoPHP/ex000/SecureParking/sistema.php"
+               // credentials verified
+               // redirect
+            }else{
+                alert ("cpf ou senha invalido")
+               // credentials incorrect
+               // append errormessage to modal
+               $('#dialog').dialog('open');
+            }
+        },
+        error: function( response ) {
+           console.log(response);
+        }
+
+});
+});
+function abrirModal(){
+    $('#dialog').dialog('open');
+}
+    $(document).ready(function() {
+    $('#dialog').dialog({
+      autoOpen: false   
+    });
+    
+    $('#openDialog').click(function() {
+      
+    });
+    
+  });
+</script>
 </html>
