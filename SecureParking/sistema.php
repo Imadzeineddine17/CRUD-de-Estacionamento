@@ -44,7 +44,7 @@ $result = $mysqli->query($sql);
       padding: 0;
     }
     .bg {
-            background-image: url("verde.jpg");
+            background-image: url("./imagens/verde.jpg");
             filter: blur(px); 
             background-size: cover;
             background-repeat: no-repeat;

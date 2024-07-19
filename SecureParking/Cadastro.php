@@ -1,30 +1,5 @@
 <?php
 if (isset($_POST['submit'])) {
-    //  print_r('Nome: ' . $_POST['nome']);
-    //  print_r('<br>');
-    //  print_r('CPF: ' .$_POST['cpf']);
-    //  print_r('<br>');
-    //  print_r('Email: ' .$_POST['email']);
-    //  print_r('<br>');
-    //  print_r('Ano do veículo: ' .$_POST['ano']);
-    //  print_r('<br>');
-    //  print_r('Telefone: ' .$_POST['telefone']);
-    //  print_r('<br>');
-    //  print_r('Sexo: ' .$_POST['genero']);
-    //  print_r('<br>');
-    //  print_r('Data de nascimento: ' .$_POST['data_nascimento']);
-    //  print_r('<br>');
-    //  print_r('Endereço: ' .$_POST['endereco']);
-    //  print_r('<br>');
-    //  print_r('CEP: ' .$_POST['cep']);
-    //  print_r('<br>');
-    //  print_r('Numero e complemento: ' .$_POST['numero_complemento']);
-    //  print_r('<br>');
-    //  print_r('Modelo do Veículo: ' .$_POST['modelo']);
-    //  print_r('<br>');
-    //  print_r('Placa do veículo: ' .$_POST['placa']);
-    //  print_r('<br>');
-    //  print_r('Ano do veículo: ' .$_POST['ano']);
 
     include_once("conexao.php");
     $nome = mysqli_real_escape_string($mysqli, $_POST['nome']);
@@ -231,8 +206,8 @@ function validarFormulario() {
             padding: 0;
         
         }
-        .bg {
-            background-image: url("verde.jpg");
+        .bg {   
+            background-image: url("./imagens/verde.jpg");
             background-size: cover;
             background-repeat: no-repeat;
             width: 100%;

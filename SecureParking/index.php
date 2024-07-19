@@ -22,7 +22,7 @@
             background-image: linear-gradient(45deg, blue, white);
         }
         .bg {
-            background-image: url("logo.png");
+            background-image: url("./imagens/logo.png");
             background-size: cover;
             background-repeat: no-repeat;
             width: 100%;

@@ -58,7 +58,7 @@ else
         
         }
         .bg {
-            background-image: url("verde.jpg");
+            background-image: url("./imagens/verde.jpg");   
             background-size: cover;
             background-repeat: no-repeat;
             width: 100%;
